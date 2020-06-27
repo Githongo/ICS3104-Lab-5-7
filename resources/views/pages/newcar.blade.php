@@ -13,6 +13,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    @if (Session::has('form_status'))
+                        <div class="alert alert-info" role="alert">
+                            {{ session('form_status')  }}
+                        </div> 
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                            
                     <form  method="post" name="newcar" action="/cars" enctype="multipart/form-data" >
                         {{ csrf_field() }}
                                 

@@ -21,7 +21,7 @@
                     </div>
                     <div class="d-flex justify-content-center form-group">
                         <input class="form-control col-lg-3" id="car_id" type ="number" placeholder="Enter ID"/>
-                        <button class="btn btn-outline-info" onclick="
+                        <button class="btn btn-outline-success" onclick="
                                 var id = document.getElementById('car_id').value;
                                 window.location.href = 'cars/'+id+'/';
                             ">Search Car</button>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\newCar;
 use App\Car;
+
+
 class carController extends Controller
 {
     public function allCars(){
@@ -13,16 +16,21 @@ class carController extends Controller
     public function specificCar($id){
         $car = Car::where('id', '=', $id)->get();
         return view('car', ['cars' => $car]);
+        //return $car->reviews;
     }
-    public function newCar(){
+    public function newCar(newCar $request){
+        //$validated = $request->validated();
+
         $car = new Car;
         $car->make = request('make');
         $car->model = request('model');
         $car->produced_on = request('production');
         if($car->save()){
-            echo "Save operation successful";
+            $request->session()->flash('form_status', 'Save operation was successful');
+            return view('pages.newcar');
         }else{
-            echo "Save operation failed! Retry...";
+            $request->session()->flash('form_status', 'Save operation failed');
+            return view('pages.newcar');
         }
         
         
