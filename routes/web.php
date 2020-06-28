@@ -23,6 +23,8 @@ Route::post('/cars', 'carController@newCar');
 Route::get('/cars/{id}', 'carController@specificCar');
 Route::get('/cars', 'carController@allCars');
 
+Route::get('/cars/reviews/{id}', 'ReviewsController@specificCar');
+
 
 
 

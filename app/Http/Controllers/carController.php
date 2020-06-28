@@ -16,10 +16,8 @@ class carController extends Controller
     public function specificCar($id){
         $car = Car::where('id', '=', $id)->get();
         return view('car', ['cars' => $car]);
-        //return $car->reviews;
     }
     public function newCar(newCar $request){
-        //$validated = $request->validated();
 
         $car = new Car;
         $car->make = request('make');
