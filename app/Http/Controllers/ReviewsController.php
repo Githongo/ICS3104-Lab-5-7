@@ -10,7 +10,7 @@ class ReviewsController extends Controller
 {
     public function allReviews(){
         $allReviews = Review::all();
-        return json_encode(['Key' => 'Value', 'Sausage' => 'Beef']);
+        return json_encode($allReviews);
     }
     public function specificCar($id){
         $car = Car::where('id', '=', $id)->get();
