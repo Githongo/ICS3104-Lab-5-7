@@ -17,6 +17,8 @@ class carController extends Controller
         $car = Car::where('id', '=', $id)->get();
         return view('car', ['cars' => $car]);
     }
+    
+
     public function newCar(newCar $request){
 
         $car = new Car;

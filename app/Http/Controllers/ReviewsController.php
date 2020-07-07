@@ -19,6 +19,14 @@ class ReviewsController extends Controller
         $car = Car::where('id', '=', $id)->get();
         return view('pages.reviews', ['cars' => $car]);
     }
+    public function specificCarReviews($id){
+        $car = Car::where('id', '=', $id)->first();
+        return json_encode($car->reviews);
+    }
+    public function specificReviewCarDetails($id){
+        $review = Review::where('id', '=', $id)->first();
+        return json_encode($review->car);
+    }
     public function specificReview($id){
         return new ReviewResource(Review::findOrFail($id));
     }

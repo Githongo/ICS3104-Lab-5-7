@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('cars/{id}', 'ApiController@search');
+Route::get('cars/{id}/allreviews', 'ReviewsController@specificCarReviews');
 Route::get('cars/reviews/{id}', 'ReviewsController@specificReview');
 Route::get('reviews/all', 'ReviewsController@allReviews');
+Route::get('reviews/{id}/car', 'ReviewsController@specificReviewCarDetails');
 
