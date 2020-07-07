@@ -6,5 +6,4 @@ This repository contains code in fulfilment of ICS 3104 Course Work.
 * Test API: use run in postman button in welcome page or import using postman collection file in root of folder. 
 
 *Student: ICS: C ~ 103673.*
-## License
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
